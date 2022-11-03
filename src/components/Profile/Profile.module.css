@@ -1,0 +1,29 @@
+.appWrapper {
+  margin: 0 auto;
+  display: grid;
+  width: 1200px;
+  grid-template-areas: "h h"
+  "n c";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns:2fr 10fr ;
+  grid-gap: 10px;
+}
+.appWrapperContent{
+  position: absolute;
+  top: 5em;
+  right: 12em;
+  grid-area: c;
+}
+
+.img{
+  min-width: 900px;
+  height: 880px;
+  object-fit: cover;
+  opacity: 0.55;
+
+}
+.posts{
+  position: absolute;
+  top:27%;
+  left: 30%;
+}

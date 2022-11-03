@@ -1,0 +1,12 @@
+.users{
+  
+  position: absolute;
+  top: 50px;
+  right: 50%;
+}
+.usersPhoto{
+  padding: 8px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
