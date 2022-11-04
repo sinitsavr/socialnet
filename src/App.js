@@ -3,13 +3,12 @@ import "./App.css";
 import Navbar from "./components/Nav/Navbar";
 import Profile from "./components/Profile/Profile";
 import DialogsContainer from "./components/Dialogs/Dialogs";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import style from './App.css';
 const App = (props) => {
   return (
   <div className={style.app}>
-    <BrowserRouter>
       <Header />
       <Navbar />
       <Routes>
@@ -30,7 +29,6 @@ const App = (props) => {
             <UsersContainer store={props.store}
               profilePage={props.state.profilePage}/>}/>
       </Routes>
-    </BrowserRouter>
     </div>
   );
 };
