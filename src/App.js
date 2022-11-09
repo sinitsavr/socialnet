@@ -1,7 +1,7 @@
 import Header from "./components/Header/Header";
 import "./App.css";
 import Navbar from "./components/Nav/Navbar";
-import Profile from "./components/Profile/Profile";
+import ProfileContainer  from "./components/Profile/ProfileContainer";
 import DialogsContainer from "./components/Dialogs/Dialogs";
 import { Route, Routes } from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
@@ -19,9 +19,9 @@ const App = (props) => {
               state={props.state.messagesPage}
               store={props.store}/>}/>
         <Route
-          path="/profile"
+          path="/profile/*"
           element={
-            <Profile store={props.store}
+            <ProfileContainer  store={props.store}
               profilePage={props.state.profilePage}/>}/>
               <Route
           path="/users"
