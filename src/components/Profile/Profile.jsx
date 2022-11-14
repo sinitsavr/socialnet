@@ -11,14 +11,12 @@ debugger;
         <img 
           alt=""
           className={style.img}
-          src={kite}
-        />
+          src={kite}/>
         <div>ava+dis</div>
       </div>
       <div className={style.posts}>
        <ProfileInfo profile={props.profile} />
-      <MyPostsContainer posts={props.profilePage.posts} newPostText={props.profilePage.newPostText} dispatch={props.dispatch} store={props.store} 
-      />
+      <MyPostsContainer posts={props.profilePage.posts} newPostText={props.profilePage.newPostText} dispatch={props.dispatch} store={props.store}/>
     </div></div>
   );
 };

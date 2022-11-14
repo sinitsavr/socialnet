@@ -1,4 +1,4 @@
-import Header from "./components/Header/Header";
+import HeaderContainer from "./components/Header/HeaderContainer";
 import "./App.css";
 import Navbar from "./components/Nav/Navbar";
 import ProfileContainer  from "./components/Profile/ProfileContainer";
@@ -7,9 +7,10 @@ import { Route, Routes } from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import style from './App.css';
 const App = (props) => {
+  // debugger
   return (
   <div className={style.app}>
-      <Header />
+      <HeaderContainer />
       <Navbar />
       <Routes>
         <Route
@@ -19,7 +20,7 @@ const App = (props) => {
               state={props.state.messagesPage}
               store={props.store}/>}/>
         <Route
-          path="/profile/*"
+          path="/profile/:userId?"
           element={
             <ProfileContainer  store={props.store}
               profilePage={props.state.profilePage}/>}/>
