@@ -1,34 +1,33 @@
-import axios from "axios";
-import React from "react";
+import React, {useEffect} from "react";
 import Profile from "./../Profile/Profile";
 import { connect } from "react-redux";
-import {setUserProfile} from './../../redux/profileReducer'
-import {useParams} from "react-router-dom";
+import {getUserProfile} from './../../redux/profileReducer'
+import {useParams, redirect} from "react-router-dom";
 
+
+
+
+const ProfileContainer = (props) => {
+  useEffect(()=>{
+    let userId = props.match.params.userId
+        let res = !userId ? '18301' : userId
+    props.getUserProfile(res);
+  },)
+  if (!props.isAuth) return redirect('/login');
+ return <Profile  profile={props.profile}/>
+  ;
+}
 const withRouter = WrappedComponent => (props) =>{
   const params = useParams();
   return ( <WrappedComponent {...props} params={params}/>)}
-  
-class ProfileContainer extends React.Component {
-  debagger;
-  componentDidMount(){
-    let userId = this.props.match.params.userId || "2";
-    let res = !userId ? '18301' : userId;
-    axios
-      .get(
-        `https://social-network.samuraijs.com/api/1.0/profile/${res}`).then((response) => {
-        this.props.setUsersProfile(response.data.items);});
-  }
- render(){
-
-  return (
-    <Profile  posts={this.props.profilePage.posts} newPostText={this.props.profilePage.newPostText} dispatch={this.props.dispatch} store={this.props.store}  profile={this.props.profile}/>
-  );
-};
-}
 
 let WithUrlDataContainerComponent= withRouter(ProfileContainer);
+
+
+  
+
 let mapStateToProps = (state) =>({
-profile: state.profilePage.profile
+profile: state.profilePage.profile,
+isAuth: state.auth.isAuth
 })
-export default connect(mapStateToProps,{setUserProfile})(WithUrlDataContainerComponent);
+export default connect(mapStateToProps,{getUserProfile})(WithUrlDataContainerComponent);
