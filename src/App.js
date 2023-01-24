@@ -3,43 +3,49 @@ import "./App.css";
 import Navbar from "./components/Nav/Navbar";
 import ProfileContainer  from "./components/Profile/ProfileContainer";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import { Route, Routes} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import UsersContainer from "./components/Users/UsersContainer";
 import style from './App.css';
 import Login from "./components/Login/login";
-const App = (props) => {
-  // debugger
+const App = () => {
   return (
-    
-  <div className={style.app}>
-     
-      <HeaderContainer />
-      <Navbar />
-      <Routes>
-        <Route
-          path="/dialogs"
-          element={
-            <DialogsContainer 
-              state={props.state.messagesPage}
-              store={props.store}/>}/>
-        <Route
-          path="/profile/:userId?"
-          element={
-            <ProfileContainer  store={props.store}
-              profilePage={props.state.profilePage}/>}/>
-              <Route
-          path="/users"
-          element={
-            <UsersContainer store={props.store}
-              profilePage={props.state.profilePage}/>}/>
-              <Route
-          path="/login"
-          element={
-            <Login
-              state={props.state.messagesPage}
-              store={props.store}/>}/>
-      </Routes>
-    </div>)
-};
+     <BrowserRouter>
+        <div className={style.app}>
+           <HeaderContainer />
+           <Navbar />
+           <div className='app-wrapper-content'>
+              <Routes>
+                 <Route
+                    path='/profile/:userId'
+                    element={
+                       <ProfileContainer />} />
+
+                 <Route
+                    path='/profile/*'
+                    element={
+                       <ProfileContainer />} />
+
+                 <Route
+                    path='/dialogs/*'
+                    element={
+                       <DialogsContainer />}
+                 />
+                 <Route
+                    path='/users'
+                    element={
+                       <UsersContainer />}
+                 />
+                 <Route
+                    path='/login'
+                    element={
+                       <Login />}
+                 />
+              </Routes>
+           </div>
+
+        </div>
+     </BrowserRouter>
+  );
+}
 
 export default App;

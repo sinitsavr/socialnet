@@ -4,7 +4,7 @@ import MyPostsContainer from "./Post/MyPostContainer";
 import kite from './../../assets/imeges/kite.png'
 import ProfileInfo from "./ProfileInfo";
 const Profile = (props) => {
-debugger;
+  // console.log(props);
   return (
     <div className={style.appWrapper}>
       <div className={style.appWrapperContent}>
@@ -16,7 +16,7 @@ debugger;
       </div>
       <div className={style.posts}>
        <ProfileInfo profile={props.profile} />
-      <MyPostsContainer posts={props.profilePage.posts} newPostText={props.profilePage.newPostText} dispatch={props.dispatch} store={props.store}/>
+      <MyPostsContainer/>
     </div></div>
   );
 };

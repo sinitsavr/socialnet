@@ -5,6 +5,7 @@ import {getAuthUserData} from './../../redux/authReducer'
 
 
 class HeaderContainer extends Component {
+  
   componentDidMount(){
     this.props.getAuthUserData();
    }

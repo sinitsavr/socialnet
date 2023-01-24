@@ -5,14 +5,14 @@ import DialogItem from "./DialogItem/DialogItem";
 import { redirect } from "react-router-dom";
 
 const Dialogs = (props) => {
-  
-  let dialogsElements = props.state.dialogsData.map((dialog) => (
+  let state = props.messagesPage;
+  let dialogsElements = state.dialogsData.map((dialog) => (
     <DialogItem name={dialog.name} id={dialog.id} key={dialog.id}/>
   ));
-  let messagesElements = props.state.messagesData.map((message) => {
+  let messagesElements = state.messagesData.map((message) => {
     return <Message message={message.message} key={message.id}/>;
   });
-  let newMessageElem = props.state.newMessageText;
+  let newMessageElem = state.newMessageText;
  
   let addMessage = () =>{
     debugger;

@@ -11,17 +11,17 @@ const Users = (props)=> {
       <div>
         <div>
           {pages.map(p=>{
-          return <span key={p} className={props.currentPage ===  p ? styles.active : undefined} onClick={(e)=>(props.onPageChanged(p))}>{p}</span> })} 
+          return <span className={props.currentPage === p ?
+            styles.selectedPage : ''} key={p} onClick={()=>{props.onPageChanged(p)}}>{p}</span> })} 
       </div>
-      <div className={styles.users}>
+      
         {props.users.map(u => (
           <div key={u.id}>
             <span>
               <div>
-                <NavLink to={`/profile/${u.id}`}>
-                <img src={u.photos.small !=null ? u.photos.small : pic} alt='' className={styles.usersPhoto} />
+                <NavLink to={'/profile/' +u.id}>
+                <img src={u.photos.small !== null ? u.photos.small : pic} alt='' className={styles.usersPhoto} />
                 </NavLink>
-                <div>{u.name}</div>
               </div>
               <div>
                 {u.followed ? (
@@ -45,7 +45,6 @@ const Users = (props)=> {
             </span>
           </div>
         ))}
-      </div>
       </div>
     );
   }

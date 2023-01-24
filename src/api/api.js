@@ -19,8 +19,8 @@ export const usersAPI = {
   `/follow/${userId}`)}
 ,
  getProfile(userId) {
-  return instance.get(
-        `/profile/`+userId)}};
+  return instance.get
+    (`/profile/`+userId);}};
 export const  authAPI = {
   me(){
       return  instance.get(`/auth/me`)}}

@@ -33,7 +33,7 @@ const profileReducer = (state = initialState, action) => {
       stateCopy.newPostText = action.newText;
    return stateCopy; }
    case SET_USER_PROFILE: {
-    return {...state, pfofile: action.profile}
+    return {...state, profile: action.profile}
    }
 
     default:
@@ -49,7 +49,7 @@ export const setUserProfile = (profile)=>({type: SET_USER_PROFILE, profile});
 
 export const getUserProfile = (userId) => (dispatch)=> {
   usersAPI.getProfile(userId).then((response) => {
-  dispatch(setUserProfile(response.data.items))})};
+  dispatch(setUserProfile(response.data))})};
 
 export const updateNewPostTextActionCreator = (text) => {
   return {
