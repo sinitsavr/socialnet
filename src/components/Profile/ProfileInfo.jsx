@@ -1,5 +1,6 @@
 import React from 'react';
 import Preloader from '../common/Preloader';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
   if(!props.profile){
@@ -9,6 +10,7 @@ const ProfileInfo = (props) => {
     <div>
       <div>
         <img src={props.profile.photos.large} alt="" />
+        <ProfileStatus status={"Hello"}/>
       </div>
     </div>
   );

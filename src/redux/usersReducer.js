@@ -72,12 +72,10 @@ export const setUsers = (users) => {
     users,
   };
 };
-export const setCurrentPage = (currentPage) => {
-  return {
+export const setCurrentPage = (currentPage) => ({
     type: SET_CURRENT_PAGE,
     currentPage
-  };
-};
+});
 
 export const setTotalUsersCount = (totalUsersCount) => {
   return {
