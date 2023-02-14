@@ -3,27 +3,22 @@ import style from "./Dialogs.module.css";
 import Message from "./Messages/Message";
 import DialogItem from "./DialogItem/DialogItem";
 import { redirect } from "react-router-dom";
+import AddMessageForm from "./AddMessageForm.js/AddMessageForm";
 
 const Dialogs = (props) => {
-  let state = props.messagesPage;
-  let dialogsElements = state.dialogsData.map((dialog) => (
-    <DialogItem name={dialog.name} id={dialog.id} key={dialog.id}/>
-  ));
-  let messagesElements = state.messagesData.map((message) => {
-    return <Message message={message.message} key={message.id}/>;
-  });
-  let newMessageElem = state.newMessageText;
- 
-  let addMessage = () =>{
-    debugger;
-    props.sendMessage()
-  };
 
-  let onMessageChange = (e) => {
-    debugger;
-    let text = e.target.value;
-    props.upadateNewMessageBody(text);
-  }
+let state = props.messagesPage;
+
+let dialogsElements = state.dialogsData.map((dialog) => (
+    <DialogItem name={dialog.name} id={dialog.id} key={dialog.id}/>));
+
+let messagesElements = state.messagesData.map((message) => {
+    return <Message message={message.message} key={message.id}/>;});
+ 
+let addNewMessage = (values) => {
+  props.sendMessage(values.newMessageText)
+}
+
   if (!props.isAuth) return redirect('/login');
 
   return (
@@ -32,15 +27,10 @@ const Dialogs = (props) => {
         {dialogsElements}
         </div>
       <div className={style.messages}>
-        {messagesElements}
+        <div>{messagesElements}</div>
         </div>
-        <div>
-          <textarea placeholder="Enter your message"
-          onChange={onMessageChange}
-          value={newMessageElem}></textarea>
-          <button onClick={addMessage}>AddMessage</button>
+          <AddMessageForm onSubmit={addNewMessage}/>
         </div>
-    </div>
   );
 };
 
