@@ -7,7 +7,18 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import UsersContainer from "./components/Users/UsersContainer";
 import style from './App.css';
 import Login from "./components/Login/login";
-const App = () => {
+import { connect } from "react-redux";
+import Preloader from "./components/common/Preloader";
+import React from "react";
+import {initializeApp} from "./redux/app-reducer";
+class App extends React.Component  {
+   componentDidMount () {
+      this.props.initializeApp()
+   }
+   render(){
+      if (!this.props.initialized){
+         return <Preloader/>
+   }
   return (
      <BrowserRouter>
         <div className={style.app}>
@@ -45,5 +56,8 @@ const App = () => {
      </BrowserRouter>
   );
 }
-
-export default App;
+}
+let mapStateToProps = (state) => ({
+   initialized: state.app.initialized
+})
+export default connect (mapStateToProps, {initializeApp})( App) ;

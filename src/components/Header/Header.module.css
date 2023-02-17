@@ -19,3 +19,15 @@
 .loginBlock {
   float: right
 }
+.loginBlockIsAuth {
+  /*float: left;*/
+  margin-left: 15px;
+  font-weight: bold;
+  color: #4f4fe5
+}
+
+.loginBlockNotAuth {
+  margin-left: 15px;
+  font-weight: bold;
+  color: #ef5050;
+}

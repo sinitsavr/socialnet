@@ -5,8 +5,7 @@ let initialState = {
     { id: 1, name: "Vadym" },
     { id: 2, name: "Julia" },
     { id: 3, name: "Ruslan" },
-    { id: 4, name: "Evgen" },
-    { id: 5, name: "Olga" },],
+    ],
   messagesData: [
     { id: 1, message: "Hi" },
     { id: 2, message: "Hello" },
@@ -34,3 +33,4 @@ const dialogsReducer = (state = initialState, action) => {
 export const addMessageActionCreator = (newMessageText) => ({type: ADD_MESSAGE, newMessageText});
 
 export default dialogsReducer;
+
