@@ -1,0 +1,20 @@
+import React from "react";
+import styles from "./users.module.css";
+
+
+const Pagination = ({pageSize, totalUsersCount, currentPage, onPageChanged})=> {
+    let pagesCount = Math.ceil(totalUsersCount / pageSize);
+    let pages = [];
+    for (let i=1; i<=pagesCount; i++){pages.push(i)}
+    return (
+      <div>
+        <div>
+          {pages.map(p=>{
+          return <span className={currentPage === p ?
+            styles.selectedPage : ''} key={p} onClick={()=>{onPageChanged(p)}}>{p}</span> })} 
+      </div>
+      </div>
+    );
+  }
+
+export default Pagination;

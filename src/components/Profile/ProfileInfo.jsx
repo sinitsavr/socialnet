@@ -3,17 +3,17 @@ import Preloader from '../common/Preloader';
 // import ProfileStatus from './ProfileStatus';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
-const ProfileInfo = (props) => {
-  if(!props.profile){
+const ProfileInfo = ({profile, status, updateStatus}) => {
+  if(!profile){
     return <Preloader/>
   }
-  let alt_descriptionBlock = `photo_${props.profile.userId}`;
+  let alt_descriptionBlock = `photo_${profile.userId}`;
   return (
     <div>
       <div>
-        <img src={props.profile.photos.large} alt={alt_descriptionBlock} />
-        <ProfileStatusWithHooks status={props.status}
-        updateStatus={props.updateStatus}/>
+        <img src={profile.photos.large} alt={alt_descriptionBlock} />
+        <ProfileStatusWithHooks status={status}
+        updateStatus={updateStatus}/>
       </div>
     </div>
   );

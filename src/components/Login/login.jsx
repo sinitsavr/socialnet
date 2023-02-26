@@ -7,7 +7,7 @@ import {
 import style from "../../utils/ErrorMessage.module.css";
 // import { Input } from '../common/FormsControl/FormControl';
 import { connect } from "react-redux";
-import { login } from "./../../redux/authReducer";
+import { login } from "../../redux/authReducer";
 import * as Yup from "yup";
 import { Formik, Field, ErrorMessage } from "formik";
 import { Navigate } from "react-router-dom";

@@ -6,7 +6,7 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import UsersContainer from "./components/Users/UsersContainer";
 import style from './App.css';
-import Login from "./components/Login/login";
+import Login from "./components/Login/Login";
 import { connect } from "react-redux";
 import Preloader from "./components/common/Preloader";
 import React from "react";
