@@ -1,20 +1,18 @@
-.appWrapper {
-  margin: 0;
-  display: grid;
-  width: 1200px;
-  grid-template-areas: "h h"
-  "n c";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns:2fr 10fr ;
-  grid-gap: 10px;
-}
+
 .nav {
-  font-weight: 500;
-  padding: 0 0 0 55px;
-  height: 100%;
-  width: 100vw;
   grid-area: n;
+  background-color:white;
+  padding: 55px;
+  font-weight: 700;
  }
  .item {
-  color: white;
+  font-weight: bold;
+  text-decoration: none;
+
  }
+ .activeLink {
+  font-weight: bold;
+  text-decoration: underline;
+  font-style: italic;
+  color: rgb(163, 51, 113);
+}

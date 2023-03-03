@@ -3,10 +3,10 @@ import style from'./Navbar.module.css';
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  return (<div className={style.appWrapper}>
+  return (
     <nav className={style.nav}>
-        <div className='item'>
-          <NavLink to='/profile'>Profile</NavLink>
+        <div >
+          <NavLink className={navData => navData.isActive ? style.activeLink : style.item} to='/profile'>Profile</NavLink>
         </div>
         <div className={style.item}>
           <NavLink to='/dialogs'>Messages</NavLink>
@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className={style.item}>
           <NavLink to='/Settings'>Settings</NavLink>
         </div>
-      </nav></div>
+      </nav>
   );
 }
 

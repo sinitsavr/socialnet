@@ -1,29 +1,18 @@
-.appWrapper {
- 
-  margin: 0 auto;
-  display: grid;
-  width: 1200px;
-  grid-template-areas: "h h"
-  "n c";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns:2fr 10fr ;
-  grid-gap: 10px;
-}
 .header {
   grid-area: h;
+  
+  /*background-color: #7fc6c6;*/
 }
+
 .img {
-  padding: 25px 0px 0;
-  width: 100px;
+  width: 70px;
 }
-.loginBlock {
-  float: right
-}
+
 .loginBlockIsAuth {
   /*float: left;*/
   margin-left: 15px;
   font-weight: bold;
-  color: #4f4fe5
+
 }
 
 .loginBlockNotAuth {

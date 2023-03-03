@@ -21,7 +21,7 @@ class App extends React.Component  {
    }
   return (
      <BrowserRouter>
-        <div className={style.app}>
+        <div className='style.app-wrapper'>
            <HeaderContainer />
            <Navbar />
            <div className='app-wrapper-content'>
