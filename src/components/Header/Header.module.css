@@ -1,11 +1,11 @@
 .header {
   grid-area: h;
-  
+  padding: 20px;
   /*background-color: #7fc6c6;*/
 }
 
 .img {
-  width: 70px;
+  width: 50px;
 }
 
 .loginBlockIsAuth {

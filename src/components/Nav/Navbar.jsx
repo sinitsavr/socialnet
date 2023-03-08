@@ -8,10 +8,10 @@ const Navbar = () => {
         <div >
           <NavLink className={navData => navData.isActive ? style.activeLink : style.item} to='/profile'>Profile</NavLink>
         </div>
-        <div className={style.item}>
+        <div className={navData => navData.isActive ? style.activeLink : style.item}>
           <NavLink to='/dialogs'>Messages</NavLink>
         </div>
-        <div className={style.item}>
+        <div className={navData => navData.isActive ? style.activeLink : style.item}>
           <NavLink to='/users'>Users</NavLink>
         </div>
         <div className={style.item}>
