@@ -6,7 +6,7 @@ let initialState = {
     { id: 2, name: "Julia" },
     { id: 3, name: "Ruslan" },
     ],
-  messagesData: [
+  messages: [
     { id: 1, message: "Hi" },
     { id: 2, message: "Hello" },
     { id: 3, message: "Wathup" },
@@ -18,14 +18,14 @@ const dialogsReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_MESSAGE:
       let text = action.newMessageText;
-      let nextIdMessages = state.messagesData.length + 1;
+      let nextIdMessages = state.messages.length + 1;
       let newMessage = {
         id: nextIdMessages + text,
         message: text,
       }
     return {
         ...state,
-        messagesData: [...state.messagesData, newMessage]}
+        messages: [...state.messages, newMessage]}
   default:
       return state;
   }};

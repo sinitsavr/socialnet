@@ -10,7 +10,7 @@ import { compose } from "redux";
     return{
     messagesPage: state.messagesPage,
     dialogsData: state.dialogsData,
-    messagesData: state.messagesData,
+    messages: state.messages,
     newMessageText: state.newMessageText,
     isAuth: state.auth.isAuth
  } }
