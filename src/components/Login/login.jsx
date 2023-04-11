@@ -48,10 +48,7 @@ const LoginPage = (props) => {
       >
         {(props) => {
           let { status, values, isSubmitting } = props;
-          // console.log( status );
-          // console.log( props.values, 'values');
-          // console.log(props.isSubmitting, 'isSubmitting');
-          console.log('props', props)
+          
           return (
             <form onSubmit={props.handleSubmit}>
               <div>

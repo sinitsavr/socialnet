@@ -27,3 +27,14 @@
   top:27%;
   left: 30%;
 }
+.profileBlock {
+  font-weight: normal;
+}
+
+.contact {
+  padding-left: 20px;
+}
+
+.buttonCancel {
+  margin-left: 13px;
+}
